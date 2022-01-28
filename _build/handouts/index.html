@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Designing Visualizations of Absenteeism | Devmountain Foundations</title>
+
+      <link
+        href="_static/pygments.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <link href="_static/devmountain.css" rel="stylesheet" type="text/css" />
+          <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+          <link rel="stylesheet" type="text/css" href="_static/devmountain.css" />
+          <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+          <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+
+      <script src="_static/pdfobject.min.js"></script>
+      
+  </head>
+  <body>
+      <div id="handouts-container">
+        <header id="page-header">
+            <p id="project-title">Devmountain Foundations</p>
+            <p id="page-title">Designing Visualizations of Absenteeism</p>
+              <p id="backlink">
+                <a href="/"> &laquo; Back to Homepage </a>
+              </p>
+        </header>
+
+        <nav id="page-toc"><ul>
+<li><a class="reference internal" href="#">Designing Visualizations of Absenteeism</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#setup">Setup</a></li>
+<li><a class="reference internal" href="#the-scenario">The Scenario</a></li>
+<li><a class="reference internal" href="#spotting-data-relationships">Spotting Data Relationships</a><ul>
+<li><a class="reference internal" href="#avoiding-data-traps">Avoiding Data Traps</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#choosing-relationships-to-visualize">Choosing Relationships to Visualize</a></li>
+<li><a class="reference internal" href="#visualize">Visualize!</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+
+        <main id="page-content">
+            <section class="section" id="designing-visualizations-of-absenteeism">
+<h1>Designing Visualizations of Absenteeism</h1>
+<section class="section" id="introduction">
+<h2>Introduction</h2>
+<p>In this exercise, you will follow a thoughtful approach to designing a visualization
+of a dataset that is ripe for analysis – a dataset with instances of worker
+absenteeism, along with social and other demographic data about the worker.</p>
+</section>
+<section class="section" id="setup">
+<h2>Setup</h2>
+<p>First, download and explore the dataset we’ll use in this exercise
+at the link below. Note that the dataset is downloadable as a TSV
+(tab separasted values) rather than our typical CSV.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://data.world/aaizemberg/absenteeismatwork" target="_blank">https://data.world/aaizemberg/absenteeismatwork</a></p></li>
+</ul>
+<p>Ensure that you have watching the Pluralsight Course
+<a class="reference external" href="https://app.pluralsight.com/library/courses/designing-data-visualizations/table-of-contents" target="_blank">Designing Data Visualizations</a>
+and that you are familiar with the content covered in the course.</p>
+<p>Lastly, create a Jupyter notebook to use for this project.</p>
+</section>
+<section class="section" id="the-scenario">
+<h2>The Scenario</h2>
+<p>There is a summit of managers who are meeting to discuss employee happiness and satisfaction.
+The managers work for a variety of companies in various industries. One of the panels
+will discuss worker absenteeism in order to understand how to craft a more modern,
+flexible Paid Time Off policy for the future of work.</p>
+<p>As a data analyst who works for one of the managers on the absenteeism panel, you have been
+tasked with conducting an analysis on large available dataset of absenteeism to draw out
+insights that might be helpful for the panel discussion.</p>
+</section>
+<section class="section" id="spotting-data-relationships">
+<h2>Spotting Data Relationships</h2>
+<ol class="arabic simple">
+<li><p>In your Jupyter notebook, go through the <strong>5 W’s + 1</strong> (Who, What, When, Where, Why, and How)
+for your analysis on the absenteeism data.</p></li>
+<li><p>Then, conduct an exploratory data analysis on the data set. What are some of the averages, minimums,
+and maximums for the various columns? Allow your <strong>curiosity</strong> to take over here. Make sure to use
+the Jupyter notebook Markdown functionality to include explanations for your exploration in this
+section.</p></li>
+<li><p>Employing the skill of <strong>skepticism</strong>, attempt to avoid the trap of “Hyman’s Maxim” (copied below for
+your convenience) by checking your data for <strong>4 types of Null Hypotheses</strong> (detailed below). For
+each null hypothesis, include a description of how you disproved it using data exploration examples.</p></li>
+</ol>
+<section class="section" id="avoiding-data-traps">
+<h3>Avoiding Data Traps</h3>
+<p><strong>Hyman’s Maxim: Don’t try to explain HOW something works until you have confirmed that it does, in fact, work.</strong></p>
+<p>In order to be sure you are building your analysis on a solid foundation, you need to check
+your data for quality. You can do this by looking at the following four types of Null Hypotheses and confirming
+that they are not present in your dataset.</p>
+<ol class="arabic simple">
+<li><p>Correlation Null Hypothesis: Two different traits, such as whether someone is a social drinker and whether
+they are a social smoker, are not actually different. This should not be the case because statistically,
+there must be at least a few people who are ONLY social smokers or ONLY social drinkers, or NEITHER.</p></li>
+<li><p>Independent Samples Null Hypothesis: Two different populations (such as people younger than 30 and older than 40) actually
+behave the same. This should not be the case because different populations should have different habits.</p></li>
+<li><p>Chi-squared independence Null Hypothesis: Two things that ARE definitely related don’t seem to have a relationship
+in the data. For example, distance from work and transportation expense most certainly should have a relationship.</p></li>
+<li><p>Repeated measures Null Hypothesis: Depite changing conditions or time, the measure or behavior does not change. For example,
+tracking a single ID would give you the all absences for a single employee. With a repeated measure for an employee, we
+would expect values for “reason for absence”, “average workload”, etc to change with time.</p></li>
+</ol>
+</section>
+</section>
+<section class="section" id="choosing-relationships-to-visualize">
+<h2>Choosing Relationships to Visualize</h2>
+<p>In this section, you’ll explore relationships within the Absenteeism datset.</p>
+<ol class="arabic simple">
+<li><p>First, upload your TSV to Google Sheets.</p></li>
+<li><p>Next, setup Conditional Formatting to provide meaningful coloring to the various
+values in your dataset. You will need to consider the range (min, max) for each
+column and set up conditional formatting to be appropriate for each set of values.
+For example, a column that is Boolean (either 0 or 1), you might want to use red/green
+to mean 0/1 respectively. For a column with values ranging from 1-100, you might
+use dark green for 90-100, light green for 80-90, etc.</p></li>
+<li><p>Use sorting to investigate relationships between the columns. What insights can you find
+that might help managers design a better PTO policy for their companies?</p></li>
+<li><p>In your Jupyter notebook, list out the signals you have spotted in the data based
+on your spreadsheet analysis.</p></li>
+</ol>
+</section>
+<section class="section" id="visualize">
+<h2>Visualize!</h2>
+<p>Now that you have completed the important design and prep work to create a quality and
+meaningful visualization, create 3-5 visualizations to provide to your manager to use at
+the “Designing A Better PTO Policy” panel. For each visualization, list 1-2 key insights
+to be drawn from it in your Jupyter notebook.</p>
+<p><strong>When you have finished, be sure to upload your Jupyter notebook to your Github to
+turn in this exercise.</strong></p>
+</section>
+</section>
+
+        </main>
+
+        <footer id="page-footer">
+            <p>&copy; 2021 Devmountain</p>
+        </footer>
+      </div>
+
+      <script src="_static/main.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+  </body>
+</html>
